@@ -1,3 +1,3 @@
-# Programação Web II
+# 1º Bimestre
 
-Objetivos: Construir sistemas para web usando banco de dados, interface com o usuário e programação em lado servidor
+Introdução ao PHP e ao XAMPP
