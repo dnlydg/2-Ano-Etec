@@ -4,40 +4,78 @@ import java.util.Scanner;
 
 public class Calculadora {
 
-	double n1;
-	double n2;
-	double r;
+	Scanner in = new Scanner(System.in);
+	
+	double numero1;
+	double numero2;
+	double resultado;
 	String operacao;
 	
 	
 	//método que inicia a calculadora, lê os valores e chama o método de cálculo
 	public void iniciar() {
-		Scanner in = new Scanner(System.in);
+		
 		System.out.println("Iniciando a calculadora...");
 		System.out.println("Por favor, digite o 1º valor:");
-		n1 = in.nextDouble();
-		System.out.println("Agora, digite a operação desejada: | / para Divisão | * para Multiplicação | - para Subtração | + para Adição |");
-		operacao = in.next();
+		numero1 = in.nextDouble();
 		System.out.println("Ok, Agora digite o 2º valor:");
-		n2 = in.nextDouble();
-		calcular(operacao);
+		numero2 = in.nextDouble();
+		selecionarOperacao();
 	}
 	
-	//método que faz o calculo
-	public void calcular(String operacao){
-		if(operacao.contentEquals("/")) {
-			r = n1/n2;
-			System.out.println("O Resultado da divisão é: "+r);
-		}else if(operacao.contentEquals("*")) {
-			r = n1*n2;
-			System.out.println("O Resultado da multiplicação é: "+r);
-		}else if(operacao.contentEquals("-")) {
-			r = n1-n2;
-			System.out.println("O Resultado da subtração é: "+r);
-		}else if(operacao.contentEquals("+")) {
-			r = n1+n2;
-			System.out.println("O Resultado da soma é: "+r);
+	//método que seleciona a operação
+	public void selecionarOperacao() {
+		System.out.println("Agora, digite a operação desejada: ");
+		System.out.println("| / para Divisão | * para Multiplicação | - para Subtração | + para Adição |");
+		operacao = in.next();
+		switch(operacao){
+		
+		case("/"):
+			dividir();
+			break;
+		case("*"):
+			multiplicar();
+			break;
+		case("-"):
+			subtrair();
+			break;
+		case("+"):
+			somar();
+			break;
+		default:
+			System.out.println("Operação Inválida");
+			break;
 		}
 	}
+	
+	//método que multiplica 
+	public void multiplicar() {
+		resultado=numero1*numero2;
+		apresentar();
+	}
+	
+	//método que divide
+	public void dividir() {
+		resultado=numero1/numero2;
+		apresentar();
+	}
+	
+	//método que subtrai
+	public void subtrair() {
+		resultado=numero1-numero2;
+		apresentar();
+	}
+	
+	//método que soma
+	public void somar() {
+		resultado=numero1+numero2;
+		apresentar();
+	}
+	
+	//método que apresenta
+	public void apresentar() {
+		System.out.println("O resultado da operação é: "+resultado);
+	}
+	
 	
 }
