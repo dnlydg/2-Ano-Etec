@@ -1,2 +1,2 @@
-# 2-Ano-Etec
-  Atividades desenvolvidas durante meu 2ºAno na ETEC de Guaianazes estão salvas aqui
+# 2º Ano - Etec
+  Atividades desenvolvidas durante meu 2º Ano na ETEC de Guaianazes estão salvas aqui
